@@ -13,6 +13,7 @@ function createCardHeader(card, student)
 {
     let cardHeader = document.createElement('div');
     cardHeader.classList.add('card-header');
+    cardHeader.style.backgroundImage = "url('" + generateRandomImage() + "')";
     card.appendChild(cardHeader);
 
     let avatar = document.createElement('img');
@@ -30,6 +31,7 @@ function createCardBody(card, student)
     let title = document.createElement('div');
     title.classList.add('title');
     title.innerText = student.title;
+    title.style.color = student.color;
     cardBody.appendChild(title);
 
     let name = document.createElement('h2');
@@ -46,6 +48,7 @@ function createCardFooter(card, student)
 {
     let cardFooter = document.createElement('div');
     cardFooter.classList.add('card-footer');
+    cardFooter.style.backgroundColor = student.color;
     card.appendChild(cardFooter);
 
     for(let s in student.stats)
